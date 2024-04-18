@@ -4,7 +4,7 @@ console.log("helooooo");
 // Đăng nhập và đăng ký
 document.addEventListener("DOMContentLoaded", function () {
     var loginLink = document.getElementById('login');
-    var registerLink = document.querySelector('.register');
+    var registerLink = document.getElementById('register');
     var loginModal = document.getElementById('loginModal');
     var registerModal = document.getElementById('registerModal');
 

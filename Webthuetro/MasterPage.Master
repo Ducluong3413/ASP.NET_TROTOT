@@ -10,7 +10,7 @@
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
     <link href="assest/css/login.css" rel="stylesheet" />
-    
+
     <link href="assest/css/register.css" rel="stylesheet" />
     <link href="masterpage.css" rel="stylesheet" />
     <link rel="stylesheet" href="/assest/font/fontawesome-free-6.5.1-web/fontawesome-free-6.5.1-web/css/all.min.css">
@@ -32,12 +32,12 @@
                         <div class="navbar hotro"><a href="support/support.html">HỔ TRỢ</a></div>
                         <div class="navbar quangcao"><a href="/advertisement.html">QUẢNG CÁO</a></div>
                         <div class="navbar qltaikhoan"><a href="/account.html">QUẢN LÝ TÀI KHOẢN</a></div>
-                        <div class="navbar timkiem"><a href=""><i class="fa-solid fa-magnifying-glass"></i></a></i></div>
+                        <div class="navbar timkiem"><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></div>
                         <div class="navbar taikhoan">
-                            <i class="fa-solid fa-circle-user"></i><a href="">TÀI KHOẢN</a>
+                            <i class="fa-solid fa-circle-user"></i><a href="#">TÀI KHOẢN</a>
                             <ul>
                                 <li id="login">Đăng nhập</li>
-                                <li class="register">Đăng ký</li>
+                                <li id="register">Đăng ký</li>
                             </ul>
 
                         </div>
@@ -96,11 +96,11 @@
                                     <img src="/assest/img/trotot.jpg" alt="">
                                 </div>
                                 <ul class="list-img">
-                                    <li class="app"><a href="">
+                                    <li class="app"><a href="#">
                                         <img src="/assest/img/appstore.jpg" alt=""></a></li>
-                                    <li class="app"><a href="">
+                                    <li class="app"><a href="#">
                                         <img src="/assest/img/chplay.jpg" alt=""></a></li>
-                                    <li class="app"><a href="">
+                                    <li class="app"><a href="#">
                                         <img src="/assest/img/app.jpg" alt=""></a></li>
                                 </ul>
                             </div>
@@ -144,20 +144,16 @@
                             <h2>Đăng Nhập</h2>
                         </div>
                         <div class="textbox-username">
-                            <%--<input id="textbox username" type="text" placeholder="Tên Đăng Nhập">--%>
                             <asp:TextBox ID="TextBox1" runat="server" placeholder="Tên Đăng Nhập"></asp:TextBox>
                         </div>
                         <div class="textbox-password">
                             <asp:TextBox ID="TextBox2" runat="server" placeholder="Mật Khẩu" TextMode="Password"></asp:TextBox>
-                            <%--<input id=" passwork" type="text" placeholder="Mật Khẩu">--%>
-                            <%--                            <asp:TextBox ID="admin" runat="server" placeholder="Mật Khẩu"</asp:TextBox>--%>
                         </div>
                         <div class="body-forgot-password">
                             <a href="">Quên mật khẩu ?</a>
                         </div>
                         <div class="body-button-login">
-                            <%--<button id="btn_login">Đăng Nhập</button>--%>
-                            <asp:Button ID="btn_login" runat="server" Text="Đăng nhập" OnClick="myButton_Click" />
+                            <asp:Button ID="btn_login" runat="server" Text="Đăng nhập" OnClick="MyButton_Click" />
                         </div>
                         <div class="body-no-have-account">
                             <p>Chưa có tài khoản ?</p>
@@ -190,33 +186,38 @@
                             <h2>Đăng ký</h2>
                         </div>
                         <div class="textbox-username">
-                            <%--<input id="textbox username" type="text" placeholder="Tên Đăng Nhập">--%>
-                            <asp:TextBox ID="name" runat="server" placeholder="Họ và tên"></asp:TextBox>
+                            <asp:TextBox ID="TB_name" runat="server" placeholder="Họ và tên"></asp:TextBox>
                         </div>
                         <div class="textbox-username">
-                            <%--<input id="textbox username" type="text" placeholder="Tên Đăng Nhập">--%>
-                            <asp:TextBox ID="username" runat="server" placeholder="Tên đăng nhập"></asp:TextBox>
+                            <asp:TextBox ID="TB_username" runat="server" placeholder="Tên đăng nhập"></asp:TextBox>
                         </div>
                         <div class="textbox-username">
-                            <%--<input id="textbox username" type="text" placeholder="Tên Đăng Nhập">--%>
-                           
-                            <asp:TextBox ID="password" runat="server" placeholder="Mật khẩu" TextMode="Password"></asp:TextBox>
+                            <asp:TextBox ID="TB_password" runat="server" placeholder="Mật khẩu" TextMode="Password"></asp:TextBox>
                         </div>
                         <div class="textbox-username">
-                            <%--<input id="textbox username" type="text" placeholder="Tên Đăng Nhập">--%>
-                            <asp:TextBox ID="sdt" runat="server" placeholder="Số điện thoại" ></asp:TextBox>
+                            <asp:TextBox ID="TB_sdt" runat="server" placeholder="Số điện thoại"></asp:TextBox>
                         </div>
                         <div class="textbox-username">
-                            <%--<input id="textbox username" type="text" placeholder="Tên Đăng Nhập">--%>
-                            <asp:TextBox ID="email" runat="server" placeholder="Email" TextMode="Email"></asp:TextBox>
+                            <asp:TextBox ID="TB_email" runat="server" placeholder="Email" TextMode="Email"></asp:TextBox>
 
                         </div>
-                        <div class="body-button-login">
-                            <%--<button id="btn_login">Đăng Nhập</button>--%>
-                            <asp:Button ID="btn_register" runat="server" Text="Đăng ký" OnClick="btn_register_Click" />
+                        <div class="nut_button">
+                            <div class="gioitinh">
+                                <asp:RadioButton ID="RadioButton1" runat="server" GroupName="hi" Text="Nam" />
+                                <asp:RadioButton ID="RadioButton2" runat="server" GroupName="hi" Text=" Nữ" />
+                            </div>
+                            <div class="gioitinh">
+                                <asp:RadioButton ID="RadioButton3" runat="server" GroupName="user" Text="Người Dùng" />
+                                <asp:RadioButton ID="RadioButton4" runat="server" GroupName="user" Text=" Chủ Trọ" />
+                            </div>
+                        </div>
+                        <div class="body-button-register">
+                            
+                            <asp:Button ID="btn_register" runat="server" Text="Đăng ký" OnClick="Btn_register_Click" />
                         </div>
 
-                        
+
+
                     </div>
                     <div class="other-policies">
                         <li><a href="">Quy chế hoạt động sàn</a></li>
@@ -231,53 +232,7 @@
         </div>
 
 
-        <%--<div id="registerModal" class="modal container" style="display: none;">
-            <div class="modal-content ">
-                <span class="close">&times;</span>
-                <form id="registerForm">
 
-                    <div class="header-register-form">
-                        <div class="body-name-website">
-                                <img src="assest/img/Logo.png" alt="Logo">
-                            </div>
-                        <div class="body-title-register">
-                            <h2>Đăng Kí</h2>
-                        </div>
-                        <div class="textbox-username">
-                            <input type="text" id="textbox" placeholder="Tên  Nhập">
-                        </div>
-                        <div class="textbox-email">
-                            <input type="email" id="textbox" placeholder="Email hoặc Số điện thoại">
-                        </div>
-                        <div class="textbox-password-again">
-                            <input type="password" id="textbox" placeholder="Nhập Mật Khẩu">
-                        </div>
-                        <div class="body-gender body">
-                            <div class="body-gender-boy">
-                                <label for="male">Nam</label>
-                                <input type="radio" id="male" name="gender" value="Nam">
-                            </div>
-                            <div class="body-gender-girl body">
-                                <label for="male">Nữ</label>
-                                <input type="radio" id="male" name="gender" value="Nữ">
-                            </div>
-                            <div class="body-gender-more body4">
-                                <label for="male">Giới tính khác</label>
-                                <input type="radio" name="gender" id="male" value="Giới tính khác">
-                            </div>
-                        </div>
-                        <div class="body-agree-to-terms">
-                            <input type="checkbox" id="tickbox">
-                            <p>Bằng việc Đăng ký, bạn đã đọc và đồng ý với Điều khoản sử dụng và Chính sách bảo mật của Trọ Tốt</p>
-                        </div>
-                        <div class="body-button-register">
-                            <button>Đăng Kí</button>
-                        </div>
-                    </div>
-
-                </form>
-            </div>
-        </div>--%>
     </form>
     <script>
         // Chuyển slide

@@ -29,10 +29,11 @@
     }
 
     #registerModal input {
-        width: 97%;
         padding: 8px;
         margin: 5px 0;
+        /*width:97%;*/
     }
+
 
     #registerModal span:hover {
         cursor: pointer;
@@ -56,19 +57,47 @@
 }
 
 .header-registerModal-form {
-    height: 400px;
     text-align: center;
     background-color: #ffffff;
 }
+#registerModal .modal-content .header-contrainer-registerModal .header-registerModal-form .nut_button {
+    
+    width:200px;
+    display:block;
+    margin:auto;
+}
+    #registerModal .modal-content .header-contrainer-registerModal .header-registerModal-form .nut_button .gioitinh input,
+    #registerModal .modal-content .header-contrainer-registerModal .header-registerModal-form .nut_button .gioitinh label {
+        margin-right: 5px;
+    }
+/*.header-registermodal-form .nut_button {
+        display: flex;
+    }*/
+.header-registerModal-form .gioitinh {
+    display: flex;
+}
+
+        .header-registerModal-form .gioitinh input {
+            width: 15px;
+            height: 26px;
+            margin-left:5px;
+        }
+
+    .header-registermodal-form .textbox-username {
+        width: 120px;
+    }
+
+
 
 .body-name-website img {
     padding-left: 0;
     margin-top: 10px;
 }
 
-.body-title-registerModal h2 {
+.body-title-register h2 {
     font-family: Helvetica;
     margin: 10px 0px;
+  
 }
 
 .body-textbox {
@@ -96,13 +125,13 @@
     left: -55px;
 }
 
-#container #loginModal .modal-content .body-button-login button {
+#container #registerModal .modal-content .body-button-register button {
     width: 300px;
     height: 35px;
     border-radius: 5px;
     color: #FFF;
     font-size: 15px;
-    background-color: gold;
+    background-color: #000;
 }
 
 
@@ -130,7 +159,6 @@
 .other-policies {
     text-align: center;
     margin-top: 10px;
-    position: relative;
     left: -8px;
     font-style: italic;
 }

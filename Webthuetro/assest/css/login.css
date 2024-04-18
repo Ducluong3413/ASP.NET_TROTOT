@@ -15,9 +15,10 @@
     margin-top: 10px;
 }
 
-.body-title-login h2 {
+#loginModal .modal-content ..header-contrainer-login .header-login-form .body-title-login h2 {
     font-family: Helvetica;
     margin: 10px 0px;
+    color:blue;
 
 }
 
@@ -26,7 +27,7 @@
 }
 
 #textbox {
-    width: 250px;
+    width: 150px;
     height: 27px;
     margin-top: 5px;
     border-radius: 6px;

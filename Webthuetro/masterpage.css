@@ -116,6 +116,7 @@ body {
 
     #loginModal h2 {
         text-align: center;
+        color:#000;
     }
 
     #loginModal label {
