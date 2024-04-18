@@ -134,7 +134,7 @@
         <div id="loginModal" class="modal">
             <div class="modal-content">
                 <span class="close">&times;</span>
-                <form class="header-contrainer-login">
+                <div class="header-contrainer-login">
 
                     <div class="header-login-form">
                         <div class="body-name-website">
@@ -168,7 +168,7 @@
                         <li><a href="">Liên hệ hỗ trợ</a></li>
                     </div>
 
-                </form>
+                </div>
             </div>
         </div>
 
@@ -176,7 +176,7 @@
         <div id="registerModal" class="modal">
             <div class="modal-content">
                 <span class="close">&times;</span>
-                <form class="header-contrainer-registerModal">
+                <div class="header-contrainer-registerModal">
 
                     <div class="header-registerModal-form">
                         <div class="body-name-website">
@@ -211,8 +211,9 @@
                                 <asp:RadioButton ID="RadioButton4" runat="server" GroupName="user" Text=" Chủ Trọ" />
                             </div>
                         </div>
+                       
+    
                         <div class="body-button-register">
-                            
                             <asp:Button ID="btn_register" runat="server" Text="Đăng ký" OnClick="Btn_register_Click" />
                         </div>
 
@@ -227,7 +228,7 @@
                         <li><a href="">Liên hệ hỗ trợ</a></li>
                     </div>
 
-                </form>
+                </div>
             </div>
         </div>
 
@@ -266,7 +267,6 @@
 
         // Bắt đầu chuyển động tự động khi trang được tải
         StartAutoSlide();
-        console.log("helo");
     </script>
     <script src="JavaScript.js"></script>
 </body>

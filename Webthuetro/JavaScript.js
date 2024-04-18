@@ -33,10 +33,10 @@ document.addEventListener("DOMContentLoaded", function () {
         registerModal.style.display = 'none';
     });
 
-    var registerNewAccountLink = document.querySelector('#loginModal .body-no-have-account a');
-    registerNewAccountLink.addEventListener('click', function (event) {
-        event.preventDefault(); // Ngăn chặn hành vi mặc định của liên kết
-        loginModal.style.display = 'none';
-        registerModal.style.display = 'block';
-    });
+    //var registerNewAccountLink = document.querySelector('#loginModal .body-no-have-account a');
+    //registerNewAccountLink.addEventListener('click', function (event) {
+    //    event.preventDefault(); // Ngăn chặn hành vi mặc định của liên kết
+    //    loginModal.style.display = 'none';
+    //    registerModal.style.display = 'block';
+    //});
 });

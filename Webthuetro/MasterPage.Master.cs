@@ -23,7 +23,6 @@ namespace Webthuetro
         }
         //Connet connet = new Connet();
 
-
         protected void MyButton_Click(object sender, EventArgs e)
         {
             string a = TextBox1.Text;
@@ -32,38 +31,81 @@ namespace Webthuetro
             string sqlCon = @"Data Source=DESKTOP-2GEPH8G\MSSQLSERVER01;Initial Catalog=DBTHUETRO;Integrated Security=True";
             SqlConnection con = new SqlConnection(sqlCon);
             con.Open();
-            string sql = "select * from TAIKHOAN";
+            string sql = "select * from USERR";
             SqlDataAdapter da = new SqlDataAdapter(sql, con);
             DataSet ds = new DataSet();
             da.Fill(ds);
+
+            bool loggedIn = false;
+
             foreach (DataRow row in ds.Tables[0].Rows)
             {
-                // Lấy giá trị của các cột từ mỗi hàng
                 string usernameDB = row["ID_TAIKHOAN"].ToString();
                 string passwordDB = row["PASSWORK"].ToString();
-                string otherColumnDB = row["LOAI_USER"].ToString();
 
-                // So sánh thông tin đăng nhập với thông tin trong cơ sở dữ liệu
                 if (a == usernameDB && b == passwordDB)
                 {
-                    // Đăng nhập thành công, có thể thực hiện các hành động khác ở đây
-                    Console.WriteLine("Đăng nhập thành công!");
-                    ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('thành công');", true);
-                    // Nếu muốn sử dụng giá trị của cột khác (ví dụ: other_column), bạn có thể thực hiện tương tự.
-                }
-                else
-                {
-                    ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('thất bại');", true);
+                    loggedIn = true;
+                    break;
                 }
             }
 
-            
             con.Close();
 
-
-
+            if (loggedIn)
+            {
+                ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('Đăng nhập thành công!');", true);
+            }
+            else
+            {
+                ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('Đăng nhập thất bại!');", true);
+            }
         }
 
+        //protected void MyButton_Click(object sender, EventArgs e)
+        //{
+        //    string a = TextBox1.Text;
+        //    string b = TextBox2.Text;
+
+        //    string sqlCon = @"Data Source=DESKTOP-2GEPH8G\MSSQLSERVER01;Initial Catalog=DBTHUETRO;Integrated Security=True";
+        //    SqlConnection con = new SqlConnection(sqlCon);
+        //    con.Open();
+        //    string sql = "select * from USERR";
+        //    SqlDataAdapter da = new SqlDataAdapter(sql, con);
+        //    DataSet ds = new DataSet();
+        //    da.Fill(ds);
+        //    foreach (DataRow row in ds.Tables[0].Rows)
+        //    {
+        //        // Lấy giá trị của các cột từ mỗi hàng
+        //        string usernameDB = row["ID_TAIKHOAN"].ToString();
+        //        string name = row["TENKHACHHANG"].ToString();
+        //        string gt = row["GIOITINH"].ToString();
+        //        string sdt = row["SDT"].ToString();
+        //        string email = row["EMAIL"].ToString();
+        //        string passwordDB = row["PASSWORK"].ToString();
+        //        string loai = row["LOAI_USER"].ToString();
+
+
+        //        // So sánh thông tin đăng nhập với thông tin trong cơ sở dữ liệu
+        //        if (a == usernameDB && b == passwordDB)
+        //        {
+        //            // Đăng nhập thành công, có thể thực hiện các hành động khác ở đây
+        //            Console.WriteLine("Đăng nhập thành công!");
+        //            ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('thành công');", true);
+        //            // Nếu muốn sử dụng giá trị của cột khác (ví dụ: other_column), bạn có thể thực hiện tương tự.
+        //        }
+        //        else
+        //        {
+        //            ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('thất bại');", true);
+        //        }
+        //    }
+
+
+        //    con.Close();
+
+
+
+        //}
 
         protected void Btn_register_Click(object sender, EventArgs e)
         {
@@ -73,70 +115,51 @@ namespace Webthuetro
             string passwork = TB_password.Text;
             string sdt = TB_sdt.Text;
             string email = TB_email.Text;
-            string gioiTinh;
-            if (RadioButton1.Checked)
-            {
-                gioiTinh = "Nam";
-            }
-            else if (RadioButton2.Checked)
-            {
-                gioiTinh = "Nữ";
-            }
-            string loai_user;
+            string gioiTinh = RadioButton1.Checked ? "Nam" : "Nữ";
+            string loai_user = RadioButton3.Checked ? "nguoidung" : "chutro";
 
-            if (RadioButton3.Checked)
-            {
-                loai_user = "nguoidung";
-            }
-            else if (RadioButton4.Checked)
-            {
-                loai_user = "chutro";
-            }
+            //string sqlCon = @"Data Source=DESKTOP-2GEPH8G\MSSQLSERVER01;Initial Catalog=DBTHUETRO;Integrated Security=True";
+            //SqlConnection con = new SqlConnection(sqlCon);
+            //con.Open();
+            //SqlCommand cmd = new SqlCommand("", con);//câu truy vấn, chuỗi kết nối
+
+            // cmd.CommandText = "INSERT INTO USERR (TENKHACHHANG, ID_TAIKHOAN, PASSWORK, SDT, EMAIL,GIOI TINH,LOAI_USER) " +
+            //   "VALUES (@Name, @Username, @Password, @SDT, @Email, @GioiTinh,@LoaiUser)";
 
             string sqlCon = @"Data Source=DESKTOP-2GEPH8G\MSSQLSERVER01;Initial Catalog=DBTHUETRO;Integrated Security=True";
-            SqlConnection con = new SqlConnection(sqlCon);
-            con.Open();
-            SqlCommand cmd = new SqlCommand("", con);//câu truy vấn, chuỗi kết nối
+            using (SqlConnection con = new SqlConnection(sqlCon))
+            {
+                con.Open();
+                string query = "INSERT INTO USERR (ID_TAIKHOAN,TENKHACHHANG,  GIOITINH,SDT, EMAIL, PASSWORK, LOAI_USER) " +
+                               "VALUES (@Username,@Name, @GioiTinh, @SDT, @Email,  @Password, @LoaiUser)";
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@Name", name);
+                    cmd.Parameters.AddWithValue("@Username", username);
+                    cmd.Parameters.AddWithValue("@Password", passwork);
+                    cmd.Parameters.AddWithValue("@SDT", sdt);
+                    cmd.Parameters.AddWithValue("@Email", email);
+                    cmd.Parameters.AddWithValue("@GioiTinh", gioiTinh);
+                    cmd.Parameters.AddWithValue("@LoaiUser", loai_user);
 
-             cmd.CommandText = "INSERT INTO USERR (TENKHACHHANG, ID_TAIKHOAN, PASSWORK, SDT, EMAIL,GIOI TINH,LOAI_USER) " +
-               "VALUES (@Name, @Username, @Password, @SDT, @Email, @GioiTinh,@LoaiUser)";
+                    int rowsAffected = cmd.ExecuteNonQuery();
 
-            //using (SqlConnection connection = new SqlConnection(Connet))
-            //{
-            //    using (SqlCommand command = new SqlCommand(query, connection))
-            //    {
-            //        // Thay thế TenBang và ColumnName1, ColumnName2,... bằng tên bảng và tên cột thực tế trong cơ sở dữ liệu của bạn
+                    if (rowsAffected > 0)
+                    {
+                        // Thành công: Thực hiện các hành động sau khi thêm dữ liệu vào cơ sở dữ liệu
+                        ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('Đăng ký thành công');", true);
+                    }
+                    else
+                    {
+                        // Xử lý trường hợp câu lệnh không thành công
+                        ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('Đăng ký thất bại');", true);
+                    }
+                }
+                con.Close();
 
-            //        // Thêm các tham số và giá trị tương ứng vào câu lệnh SQL
-            //        command.Parameters.AddWithValue("@Name", name);
-            //        command.Parameters.AddWithValue("@Username", username);
-            //        command.Parameters.AddWithValue("@Password", passwork);
-            //        command.Parameters.AddWithValue("@SDT", sdt);
-            //        command.Parameters.AddWithValue("@Email", email);
-            //        command.Parameters.AddWithValue("@GioiTinh", gioiTinh);
-            //        command.Parameters.AddWithValue("@GioiTinh", loai_user);
+            }
 
-            //        // Mở kết nối
-            //        connection.Open();
 
-            //        // Thực thi câu lệnh SQL
-            //        int rowsAffected = command.ExecuteNonQuery();
-
-            //        // Kiểm tra xem câu lệnh đã thực hiện thành công hay không
-            //        if (rowsAffected > 0)
-            //        {
-            //            // Câu lệnh đã thực hiện thành công
-            //            // Thực hiện các hành động cần thiết sau khi thêm dữ liệu vào cơ sở dữ liệu
-            //        }
-            //        else
-            //        {
-            //            // Xử lý trường hợp câu lệnh không thành công
-            //        }
-            //    }
-            //}
-            
-
-            con.Close();
 
 
 
