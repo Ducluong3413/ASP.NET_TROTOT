@@ -94,6 +94,28 @@ body {
 #nav .container .container_nav .taikhoan a i {
     margin-right: 5px;
 } */
+
+
+img#avata {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+/*logout*/
+/*button,input {
+    width: :100%;
+    height: 45px;
+    border: none;
+}
+    
+*/
+.logout-button {
+    width: :111px;
+    height: 45px;
+    border: none;
+}
+/*logout*/
 #loginModal.hidden {
     opacity: 0;
     visibility: hidden;

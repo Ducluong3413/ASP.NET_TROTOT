@@ -33,15 +33,49 @@
                         <div class="navbar quangcao"><a href="/advertisement.html">QUẢNG CÁO</a></div>
                         <div class="navbar qltaikhoan"><a href="/account.html">QUẢN LÝ TÀI KHOẢN</a></div>
                         <div class="navbar timkiem"><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></div>
+                        <% if (Session["isLoggedIn"] != null && (bool)Session["isLoggedIn"])
+                            { %>
+                        <div class="navbar taikhoan">
+                            <a href="#">TÀI KHOẢN</a>
+                            <img src="assest/img/Screenshot 2024-02-26 092621.jpg" alt="Avatar" class="avatar" id="avata">
+
+                            <ul>
+                                <asp:Button ID="logout" runat="server" CssClass="logout-button" Text="Đăng xuất" OnClick="logoutClick" />
+                            </ul>
+                        </div>
+                        <% }
+                        else
+                        { %>
                         <div class="navbar taikhoan">
                             <i class="fa-solid fa-circle-user"></i><a href="#">TÀI KHOẢN</a>
                             <ul>
                                 <li id="login">Đăng nhập</li>
                                 <li id="register">Đăng ký</li>
                             </ul>
-
                         </div>
+                        <% } %>
 
+                        <%--<div class="navbar taikhoan">
+                            <i class="fa-solid fa-circle-user"></i><a href="#">TÀI KHOẢN</a>
+
+
+                            <% if (Session["isLoggedIn"] != null && (bool)Session["isLoggedIn"])
+                                { %>
+                            <ul>
+                                
+                                <asp:Button ID="logout" runat="server"  CssClass="logout-button" Text="Đăng xuất" onClick="logoutClick"/>
+                            </ul>
+                            <% }
+                                else
+                                { %>
+                            <ul>
+                                <li id="login">Đăng nhập</li>
+                                <li id="register">Đăng ký</li>
+                            </ul>
+                            <% } %>
+
+                            
+                        </div>--%>
                     </div>
                 </div>
             </div>
@@ -211,8 +245,8 @@
                                 <asp:RadioButton ID="RadioButton4" runat="server" GroupName="user" Text=" Chủ Trọ" />
                             </div>
                         </div>
-                       
-    
+
+
                         <div class="body-button-register">
                             <asp:Button ID="btn_register" runat="server" Text="Đăng ký" OnClick="Btn_register_Click" />
                         </div>

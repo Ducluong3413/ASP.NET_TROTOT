@@ -73,6 +73,7 @@
     </Content>
     <Content Include="assest\css\detail.css" />
     <Content Include="assest\css\dssanpham.css" />
+    <Content Include="assest\css\InputSP.css" />
     <Content Include="assest\css\login.css" />
     <Content Include="assest\css\register.css" />
     <Content Include="assest\font\fontawesome-free-6.5.1-web\fontawesome-free-6.5.1-web\css\all.css" />
@@ -2174,6 +2175,7 @@
     <Content Include="Default.aspx" />
     <Content Include="Detaill.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="InputSP.aspx" />
     <Content Include="JavaScript.js" />
     <Content Include="masterpage.css" />
     <Content Include="Web.config" />
@@ -2198,6 +2200,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="InputSP.aspx.cs">
+      <DependentUpon>InputSP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InputSP.aspx.designer.cs">
+      <DependentUpon>InputSP.aspx</DependentUpon>
     </Compile>
     <Compile Include="MasterPage.Master.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
@@ -2286,6 +2295,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="assest\Images\" />
     <Folder Include="assest\pagehtml\" />
     <Folder Include="Models\" />
   </ItemGroup>

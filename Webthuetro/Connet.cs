@@ -9,7 +9,7 @@ namespace Webthuetro
 {
     public class Connet
     {
-        SqlConnection con =new SqlConnection(@"Data Source=DESKTOP-2GEPH8G\MSSQLSERVER01;Initial Catalog=DBTHUETRO;Integrated Security=True");
+        SqlConnection con =new SqlConnection(@"Data Source=DESKTOP-2GEPH8G\MSSQLSERVER01;Initial Catalog=DB_TROTOT;Integrated Security=True");
 
         private void openconent()
         {

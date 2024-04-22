@@ -28,7 +28,7 @@ namespace Webthuetro
             string a = TextBox1.Text;
             string b = TextBox2.Text;
 
-            string sqlCon = @"Data Source=DESKTOP-2GEPH8G\MSSQLSERVER01;Initial Catalog=DBTHUETRO;Integrated Security=True";
+            string sqlCon = @"Data Source=DESKTOP-2GEPH8G\MSSQLSERVER01;Initial Catalog=DB_TROTOT;Integrated Security=True";
             SqlConnection con = new SqlConnection(sqlCon);
             con.Open();
             string sql = "select * from USERR";
@@ -37,7 +37,7 @@ namespace Webthuetro
             da.Fill(ds);
 
             bool loggedIn = false;
-
+            string user = "";
             foreach (DataRow row in ds.Tables[0].Rows)
             {
                 string usernameDB = row["ID_TAIKHOAN"].ToString();
@@ -45,7 +45,10 @@ namespace Webthuetro
 
                 if (a == usernameDB && b == passwordDB)
                 {
+                    user = usernameDB.ToString();
+                    Session["UserID"] = user; 
                     loggedIn = true;
+                    Session["isLoggedIn"] = true;
                     break;
                 }
             }
@@ -54,12 +57,29 @@ namespace Webthuetro
 
             if (loggedIn)
             {
-                ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('Đăng nhập thành công!');", true);
+
+                Session["isLoggedIn"] = true;
+                //ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('Đăng nhập thành công!');", true);
+                ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('Đăng nhập thành công!"+user+"');", true);
+
+
             }
             else
             {
                 ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('Đăng nhập thất bại!');", true);
             }
+            //if (Session["isLoggedIn"] != null && (bool)Session["isLoggedIn"])
+            //{
+            //    // Session "isLoggedIn" đã được lưu trữ và có giá trị true
+            //    ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('session thành công!');", true);
+
+            //}
+            //else
+            //{
+            //    // Session "isLoggedIn" chưa được lưu trữ hoặc có giá trị false
+            //    ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('session thất bại !');", true);
+
+            //}
         }
 
         //protected void MyButton_Click(object sender, EventArgs e)
@@ -126,7 +146,7 @@ namespace Webthuetro
             // cmd.CommandText = "INSERT INTO USERR (TENKHACHHANG, ID_TAIKHOAN, PASSWORK, SDT, EMAIL,GIOI TINH,LOAI_USER) " +
             //   "VALUES (@Name, @Username, @Password, @SDT, @Email, @GioiTinh,@LoaiUser)";
 
-            string sqlCon = @"Data Source=DESKTOP-2GEPH8G\MSSQLSERVER01;Initial Catalog=DBTHUETRO;Integrated Security=True";
+            string sqlCon = @"Data Source=DESKTOP-2GEPH8G\MSSQLSERVER01;Initial Catalog=DB_TROTOT;Integrated Security=True";
             using (SqlConnection con = new SqlConnection(sqlCon))
             {
                 con.Open();
@@ -164,6 +184,21 @@ namespace Webthuetro
 
 
         }
+
+        protected void logoutClick(object sender, EventArgs e)
+        {
+            ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('logout');", true);
+
+            // Xóa tất cả các session và cookie
+            Session.Clear();
+            Session.Abandon();
+            Response.Cookies.Add(new HttpCookie("ASP.NET_SessionId", ""));
+            // Redirect về trang đăng nhập hoặc trang chính
+            Response.Redirect("Default.aspx"); // Change 'Default.aspx' to your desired redirect page
+
+
+        }
+
 
 
     }
