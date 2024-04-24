@@ -17,14 +17,14 @@ namespace Webthuetro
 
         }
         string filename = "";
-        protected void UploadButton_Click(object sender, EventArgs e)
+        protected void BtnDangTin_Click(object sender, EventArgs e)
         {
             if (FileUpload1.HasFile)
             {
                 try
                 {
                     filename = Path.GetFileName(FileUpload1.FileName);
-                    string folderPath = Server.MapPath("~/Images/"); // Thay đổi đường dẫn nếu bạn muốn lưu ảnh vào thư mục khác
+                    string folderPath = Server.MapPath("~/Images"); // Thay đổi đường dẫn nếu bạn muốn lưu ảnh vào thư mục khác
                     string filePath = Path.Combine(folderPath, filename);
                     FileUpload1.SaveAs(filePath);
                     // Thông báo thành công
@@ -41,10 +41,6 @@ namespace Webthuetro
                 // Thông báo nếu không có tập tin được chọn
                 ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('Vui lòng chọn tập tin ảnh để tải lên.');", true);
             }
-        }
-        protected void BtnDangTin_Click(object sender, EventArgs e)
-        {
-
             //ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('đăng tin');", true);
             string tieude = Tieude.Text;
             string giathue = Giathue.Text;

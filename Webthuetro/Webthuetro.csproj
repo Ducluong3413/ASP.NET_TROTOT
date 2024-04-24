@@ -2295,8 +2295,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="assest\Images\" />
     <Folder Include="assest\pagehtml\" />
+    <Folder Include="Images\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
