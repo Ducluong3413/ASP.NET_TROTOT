@@ -71,11 +71,17 @@
     <Content Include="App_Data\DBTHUETRO_log.ldf">
       <DependentUpon>DBTHUETRO.mdf</DependentUpon>
     </Content>
+    <Content Include="assest\css\advertisement.css" />
+    <Content Include="assest\css\contact.css" />
     <Content Include="assest\css\detail.css" />
     <Content Include="assest\css\dssanpham.css" />
+    <Content Include="assest\css\forgot-password.css" />
     <Content Include="assest\css\InputSP.css" />
     <Content Include="assest\css\login.css" />
     <Content Include="assest\css\register.css" />
+    <Content Include="assest\css\search.css" />
+    <Content Include="assest\css\support.css" />
+    <Content Include="assest\css\trangchu.css" />
     <Content Include="assest\font\fontawesome-free-6.5.1-web\fontawesome-free-6.5.1-web\css\all.css" />
     <Content Include="assest\font\fontawesome-free-6.5.1-web\fontawesome-free-6.5.1-web\css\all.min.css" />
     <Content Include="assest\font\fontawesome-free-6.5.1-web\fontawesome-free-6.5.1-web\css\brands.css" />
@@ -2172,18 +2178,31 @@
     <Content Include="assest\img\Screenshot 2024-02-26 092621.jpg" />
     <Content Include="assest\img\trotot.jpg" />
     <Content Include="assest\img\tải xuống.jpg" />
+    <Content Include="contact.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="Detaill.aspx" />
+    <Content Include="forgot-password.aspx" />
     <Content Include="Global.asax" />
     <Content Include="InputSP.aspx" />
     <Content Include="JavaScript.js" />
+    <Content Include="ManageUser.aspx" />
     <Content Include="masterpage.css" />
+    <Content Include="quangcao.aspx" />
+    <Content Include="search.aspx" />
+    <Content Include="support.aspx" />
     <Content Include="Web.config" />
     <Content Include="WebForm1.aspx" />
     <Content Include="WebUserControl1.ascx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Connet.cs" />
+    <Compile Include="contact.aspx.cs">
+      <DependentUpon>contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="contact.aspx.designer.cs">
+      <DependentUpon>contact.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2198,6 +2217,13 @@
     <Compile Include="Detaill.aspx.designer.cs">
       <DependentUpon>Detaill.aspx</DependentUpon>
     </Compile>
+    <Compile Include="forgot-password.aspx.cs">
+      <DependentUpon>forgot-password.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="forgot-password.aspx.designer.cs">
+      <DependentUpon>forgot-password.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -2208,6 +2234,13 @@
     <Compile Include="InputSP.aspx.designer.cs">
       <DependentUpon>InputSP.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ManageUser.aspx.cs">
+      <DependentUpon>ManageUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageUser.aspx.designer.cs">
+      <DependentUpon>ManageUser.aspx</DependentUpon>
+    </Compile>
     <Compile Include="MasterPage.Master.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2216,6 +2249,27 @@
       <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="quangcao.aspx.cs">
+      <DependentUpon>quangcao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="quangcao.aspx.designer.cs">
+      <DependentUpon>quangcao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="search.aspx.cs">
+      <DependentUpon>search.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="search.aspx.designer.cs">
+      <DependentUpon>search.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="support.aspx.cs">
+      <DependentUpon>support.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="support.aspx.designer.cs">
+      <DependentUpon>support.aspx</DependentUpon>
+    </Compile>
     <Compile Include="WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

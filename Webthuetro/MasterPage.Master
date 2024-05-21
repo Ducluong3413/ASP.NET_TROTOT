@@ -28,11 +28,12 @@
                         </div>
                         <h2>TRỌ TỐT</h2>
                         <div class="navbar trangchu"><a href="/Default.aspx">TRANG CHỦ</a></div>
-                        <div class="navbar lienhe"><a href="/contact.html">LIÊN HỆ</a></div>
-                        <div class="navbar hotro"><a href="support/support.html">HỔ TRỢ</a></div>
-                        <div class="navbar quangcao"><a href="/advertisement.html">QUẢNG CÁO</a></div>
-                        <div class="navbar qltaikhoan"><a href="/account.html">QUẢN LÝ TÀI KHOẢN</a></div>
-                        <div class="navbar timkiem"><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></div>
+                        <div class="navbar lienhe"><a href="contact.aspx">LIÊN HỆ</a></div>
+    
+                        <div class="navbar hotro"><a href="support.aspx">HỔ TRỢ</a></div>
+                        <div class="navbar quangcao"><a href="quangcao.aspx">QUẢNG CÁO</a></div>
+                        <div class="navbar qltaikhoan"><a href="ManageUser.aspx">QUẢN LÝ TÀI KHOẢN</a></div>
+                        <div class="navbar timkiem"><a href="search.aspx"><i class="fa-solid fa-magnifying-glass"></i></a></div>
                         <% if (Session["isLoggedIn"] != null && (bool)Session["isLoggedIn"])
                             { %>
                         <div class="navbar taikhoan">
@@ -184,7 +185,8 @@
                             <asp:TextBox ID="TextBox2" runat="server" placeholder="Mật Khẩu" TextMode="Password"></asp:TextBox>
                         </div>
                         <div class="body-forgot-password">
-                            <a href="">Quên mật khẩu ?</a>
+                            <%--<a href="">Quên mật khẩu ?</a>--%>
+                            <a href="forgot-password.aspx">Quên mật khẩu ?</a>
                         </div>
                         <div class="body-button-login">
                             <asp:Button ID="btn_login" runat="server" Text="Đăng nhập" OnClick="MyButton_Click" />

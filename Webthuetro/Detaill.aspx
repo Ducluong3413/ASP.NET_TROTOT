@@ -10,7 +10,7 @@
             <div class="container">
                 <div class="container-detail">
                     <div class="container-detail-left">
-                        <div class="listimg">
+                        <%--<div class="listimg">
                             <img src="/assest/img/2.jpg" alt="">
                         </div>
                         <h3>cho thuê phòng q3 full nội thất</h3>
@@ -56,7 +56,9 @@
                                 
                                 giá trọn gói, ko phát sinh thêm nên bạn nào muốn tiết kiệm chi phí thì liên hệ để xem phòng
                                 địa chỉ : 270 nguyễn oanh, p17, gò vấp</p>
-                        </div>
+                        </div>--%>
+                        <asp:Literal ID="Literal2" runat="server"></asp:Literal>
+
 
                     </div>
                     <div class="container-detail-right">
@@ -87,112 +89,6 @@
 
 
 
-
-
-
-
-        <!-- phan than -->
-
-
-
-
-
-
-
-       
-
-        <%--<!-- Đăng nhập-->     
-        <div id="loginModal" class="modal">
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <form class="header-contrainer-login">
-                    
-                        <div class="header-login-form">
-                                <div class="body-name-website">
-                                    <img src="assest/img/Logo.png" alt="Logo">
-                                </div>
-                                <div class="body-title-login">
-                                    <h2>Đăng Nhập</h2>
-                                </div>  
-                                <div class="textbox-username">
-                                    <input id="textbox" type="text" placeholder="Tên Đăng Nhập">
-                                </div>
-                                <div class="textbox-password">
-                                    <input id="textbox" type="text" placeholder="Mật Khẩu">
-                                </div>
-                                <div class="body-forgot-password">
-                                    <a href="">Quên mật khẩu ?</a>
-                                </div>      
-                                <div class="body-button-login">
-                                    <button>Đăng Nhập</button>
-                                </div>
-                                <div class="body-no-have-account">
-                                    <p>Chưa có tài khoản ?</p>
-                                    <a href="">Đăng kí tài khoản mới</a>
-                                </div>
-                        </div>
-                        <div class="other-policies">    
-                                <li><a href="">Quy chế hoạt động sàn</a></li>
-                                <span>*</span>
-                                <li><a href="">Chính sách bảo mật</a></li>
-                                <span>*</span>
-                                <li><a href="">Liên hệ hỗ trợ</a></li>
-                        </div>
-                   
-                </form>
-            </div>
-            </div>
-
-            <!-- Đăng kí -->
-            <div id="registerModal" class="modal" style="display: none;">
-                <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <form id="registerForm">
-                        <div class="header-contrainer-register">
-                            <div class="header-register-form">
-                                 <div class="body-name-website">
-                                    <img src="assest/img/Logo.png" alt="Logo">
-                                 </div>
-                                 <div class="body-title-register">
-                                    <h2>Đăng Kí</h2>
-                                 </div>
-                                 <div class="textbox-username">
-                                <input type="text" id="textbox" placeholder="Tên Đăng Nhập">
-                            </div>
-                            <div class="textbox-email">
-                                <input type="text" id="textbox" placeholder="Email hoặc Số điện thoại">
-                            </div>
-                            <div class="textbox-password-again">    
-                                <input type="text" id="textbox" placeholder="Nhập Mật Khẩu">
-                            </div>
-                                 <div class="body-gender">
-                                    <div class="body-gender-boy">
-                                    <label for="male">Nam</label>
-                                    <input type="radio" id="male" name="gender" value="Nam">
-                                </div>
-                                <div class="body-gender-girl">
-                                    <label for="male">Nữ</label>
-                                    <input type="radio" id="male" name="gender" value="Nữ">
-                                </div>
-                                <div class="body-gender-more">
-                                    <label for="male">Giới tính khác</label>
-                                     <input type="radio" name="gender" id="male" value="Giới tính khác">   
-                                    </div>    
-                                 </div>
-                                 <div class="body-agree-to-terms">
-                                    <input type="checkbox" id="tickbox">
-                                    <p>Bằng việc Đăng ký, bạn đã đọc và đồng ý với Điều khoản sử dụng và Chính sách bảo mật của Trọ Tốt</p> 
-                                 </div>
-                                 <div class="body-button-register">
-                                    <button>Đăng Kí</button>
-                                 </div>
-                            </div>
-                        </div> 
-                    </form>
-            </div>
-        </div>--%>
-
-        
 
     </div>
     <script src="assest/vscode/style.js">

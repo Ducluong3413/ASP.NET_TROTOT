@@ -64,6 +64,10 @@ namespace Webthuetro
             closeconent();
             return dt;
         }
+        public SqlConnection getConnection()
+        {
+            return con;
+        }
 
     }
 }

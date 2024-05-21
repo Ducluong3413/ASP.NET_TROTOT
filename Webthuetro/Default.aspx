@@ -4,6 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <link href="assest/css/dssanpham.css" rel="stylesheet" />
+    <link href="assest/css/trangchu.css" rel="stylesheet" />
     <div id="header">
         <div class="container">
             <div class="container_header">
@@ -23,13 +24,23 @@
             </div>
         </div>
     </div>
-    <div class="themmoi">
+    <div class="themmoi" >
         <div class="container">
-            <div id="container-themmoi">
+            <div class="container-themmoi">
                 <a href="InputSP.aspx">Đăng tin mới</a>
             </div>
         </div>
     </div>
+    <div class ="theloai">
+        <div class="container">
+            <div class="container-theloai">
+                    <asp:LinkButton ID="LinkButton2" runat="server" OnClick="LinkButton2Click" CssClass="a">THUÊ TRỌ</asp:LinkButton>
+                    <asp:LinkButton ID="LinkButton3" runat="server" OnClick="LinkButton1Click">TÌM TRỌ</asp:LinkButton>
+                    <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton3Click">Tất cả</asp:LinkButton>
+            </div>
+        </div>
+    </div>
+    
     <!-- nội dung -->
 
     <div class="container">
